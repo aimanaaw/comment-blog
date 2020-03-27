@@ -11,7 +11,7 @@ from flask_sqlalchemy import SQLAlchemy
 
 db = SQLAlchemy()
 postgres = {
-  'user': 'postgres',
+  'user': 'aimanaaw',
   'pw': 'password',
   'db': 'my_database',
   'host': 'localhost',
@@ -21,7 +21,7 @@ postgres = {
 def create_app():
   app = Flask(__name__)
 
-  app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:password@localhost/my_database'
+  app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://aimanaaw:password@localhost/my_database'
 
   db.init_app(app)
 
