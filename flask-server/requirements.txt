@@ -1,4 +1,5 @@
 alabaster==0.7.12
+alembic==1.4.2
 anaconda-client==1.7.2
 anaconda-navigator==1.9.7
 anaconda-project==0.8.3
@@ -53,6 +54,7 @@ filelock==3.0.12
 Flask==1.1.1
 Flask-Bcrypt==0.7.1
 Flask-Login==0.5.0
+Flask-Migrate==2.5.3
 Flask-SQLAlchemy==2.4.1
 Flask-WTF==0.14.3
 fsspec==0.5.2
@@ -94,6 +96,7 @@ lief==0.9.0
 llvmlite==0.29.0
 locket==0.2.0
 lxml==4.4.1
+Mako==1.1.2
 MarkupSafe==1.1.1
 matplotlib==3.1.1
 mccabe==0.6.1
@@ -137,6 +140,7 @@ ply==3.11
 prometheus-client==0.7.1
 prompt-toolkit==2.0.10
 psutil==5.6.3
+psycopg2==2.8.4
 ptyprocess==0.6.0
 py==1.8.0
 pycodestyle==2.5.0
@@ -159,6 +163,7 @@ pytest-doctestplus==0.4.0
 pytest-openfiles==0.4.0
 pytest-remotedata==0.3.2
 python-dateutil==2.8.0
+python-editor==1.0.4
 pytz==2019.3
 PyWavelets==1.0.3
 PyYAML==5.1.2
