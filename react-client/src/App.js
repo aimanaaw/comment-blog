@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import { Comments } from "./components/Comments";
+import { CommentForm } from "./components/CommentForm";
+import { Container } from 'semantic-ui-react';
+
 
 function App() {
   const [comments, setComments] = useState([])
@@ -13,10 +15,14 @@ function App() {
       })
     })
   }, [])
-  console.log(comments)
   return (
     <div className="App">
-      <Comments comments={comments}/>
+      <Container style={{marginTop:40}}>
+        <Comments comments={comments}/>
+      </Container>
+      <Container>
+        <CommentForm />
+      </Container>
     </div>
   );
 }
