@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { Form, Input, Button} from "semantic-ui-react";
 
-export const CommentForm = () => {
-  const [note, setNote] = useState('')
+export const CommentForm = ({onNewComment}) => {
   const [author, setAuthor] = useState('')
+  const [note, setNote] = useState('')
   const [email, setEmail] = useState('')
   const [date, setDate] = useState('')
 
@@ -33,6 +33,12 @@ export const CommentForm = () => {
           });
           if (response.ok) {
             console.log('response worked');
+            onNewComment(comment);
+            setNote('');
+            setAuthor('');
+            setEmail('');
+            setDate('');
+
           }
         }}>
           Submit

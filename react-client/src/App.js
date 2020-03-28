@@ -21,7 +21,7 @@ function App() {
         <Comments comments={comments}/>
       </Container>
       <Container>
-        <CommentForm />
+        <CommentForm onNewComment={comment => setComments(previousComments => [...previousComments, comment])} />
       </Container>
     </div>
   );
