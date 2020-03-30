@@ -3,6 +3,9 @@ import './App.css';
 import { Comments } from "./components/Comments";
 import { CommentForm } from "./components/CommentForm";
 import { Container } from 'semantic-ui-react';
+import io from 'socket.io-client';
+
+const socket = io('http://localhost:5000')
 
 
 function App() {
@@ -14,7 +17,21 @@ function App() {
         console.log(data)
       })
     })
-  }, [])
+    getComments();
+
+  }, [comments.length])
+
+  const getComments = () => {
+    socket.on("message", newComment => {
+      console.log("comments")
+      setComments([...comments, newComment]);
+    });
+    console.log("Hello from the client side")
+  }
+
+  
+
+
   return (
     <div className="App">
       <Container style={{marginTop:40}}>
