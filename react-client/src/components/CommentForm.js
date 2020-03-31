@@ -43,9 +43,6 @@ export const CommentForm = ({onNewComment}) => {
         <Input placeholder="New Comment" value={note} onChange={event => setNote(event.target.value)}/>
       </Form.Field>
       <Form.Field>
-        <Input placeholder="dd/mm/yyyy" value={date} onChange={event => setDate(event.target.value)}/>
-      </Form.Field>
-      <Form.Field>
         <Button onClick={submitComment}>
           Submit
         </Button>
