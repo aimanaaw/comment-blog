@@ -1,25 +1,11 @@
 import React from "react";
-import { List, Header, Table, Icon } from "semantic-ui-react";
+import { Table } from "semantic-ui-react";
 import Moment from "react-moment";
+import moment from "moment";
 
 export const Comments = ({ comments }) => {
   return (
     <div>
-      {/* <List>
-      <List.Item>
-      {comments.map(comment => {
-        return (
-          <List.Content key={comment.author}>
-            <Header>
-              {comment.author}
-            </Header>
-            {comment.note}
-          </List.Content>
-        )
-      })}
-
-      </List.Item>
-    </List> */}
 
       <Table>
         <Table.Header>
@@ -34,14 +20,12 @@ export const Comments = ({ comments }) => {
           {comments.map(eachComment => {
             let eachAuthorEmail = "mailto:" + eachComment.email;
             return (
-              <Table.Row>
-                <Table.Cell width={1} Icon name="mail">
+              <Table.Row key={eachComment.id}>
+                <Table.Cell width={2} Icon name="mail">
                   <a href={eachAuthorEmail}>{eachComment.author}</a>
                 </Table.Cell>
-                <Table.Cell>
-                  <Moment titleFormat="D MMM YYYY" withTitle>
-                    {eachComment.date}
-                  </Moment>
+                <Table.Cell width={2}>
+                {moment(eachComment.date).format('DD MMM YYYY')}
                 </Table.Cell>
                 <Table.Cell>{eachComment.note} - posted <Moment fromNow>{eachComment.date}</Moment></Table.Cell>
               </Table.Row>

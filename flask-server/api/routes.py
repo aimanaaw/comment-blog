@@ -25,7 +25,7 @@ def comments():
 
   comments = []
   for comment in comment_list:
-    comments.append({'author': comment.author, 'note': comment.note, 'email': comment.email, 'date': comment.date})
+    comments.append({'id': comment.id, 'author': comment.author, 'note': comment.note, 'email': comment.email, 'date': comment.date})
 
 
   return jsonify({'comments': comments})

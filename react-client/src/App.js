@@ -13,7 +13,6 @@ function App() {
     fetch("/comments").then(response => {
       response.json().then(data => {
         setComments(data.comments);
-        console.log(data);
       });
     });
     getComments();
@@ -21,10 +20,8 @@ function App() {
 
   const getComments = () => {
     socket.on("message", newComment => {
-      console.log("comments");
       setComments([...comments, newComment]);
     });
-    console.log("Hello from the client side");
   };
 
   return (
