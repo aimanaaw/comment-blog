@@ -1,8 +1,10 @@
-from . import db
+from .base import db
 from datetime import datetime
 
 
 class Comments(db.Model):
+  
+  __tablename__ = "comments"
   id = db.Column(db.Integer, primary_key=True)
   author = db.Column(db.String(50))
   note = db.Column(db.String(300))

@@ -1,6 +1,5 @@
 from flask import Blueprint, jsonify, request
-from . import db
-from .models import Comments
+from api.models import db, Comments
 # from flask-server/run.py import socketio, on
 from run import socketio
 from flask_socketio import send, emit, namespace
@@ -23,12 +22,12 @@ def add_comments():
 def comments():
   comment_list = Comments.query.all()
 
-  comments = []
-  for comment in comment_list:
-    comments.append({'id': comment.id, 'author': comment.author, 'note': comment.note, 'email': comment.email, 'date': comment.date})
+  commentsArray = []
+  for eachcomment in comment_list:
+    commentsArray.append({'id': eachcomment.id, 'author': eachcomment.author, 'note': eachcomment.note, 'email': eachcomment.email, 'date': eachcomment.date})
 
 
-  return jsonify({'comments': comments})
+  return jsonify({'comments': commentsArray})
 
 
 # @socketio.on("message")

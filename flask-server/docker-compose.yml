@@ -1,0 +1,26 @@
+version: '3'
+
+services: 
+  postgres:
+    container_name: blog
+    restart: always
+    image: postgres:alpine
+    volumes:
+      - flask-server-db:/var/lib/postgresql/data
+    ports:
+      - '5432:5432'
+  app:
+    image: flaskapp
+    ports:
+      - "5000:5000"
+    depends_on: postgres
+
+
+    container_name: frosty_moser
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+     - postgres
+    entrypoint: /app/run.py
