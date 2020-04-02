@@ -1,7 +1,5 @@
 from flask import Blueprint, jsonify, request
 from api.models import db, Comments
-# from flask-server/run.py import socketio, on
-from run import socketio
 from flask_socketio import send, emit, namespace
 
 

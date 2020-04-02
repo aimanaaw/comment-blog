@@ -1,15 +1,15 @@
-# class DevelopmentConfig:
-#   # Development Configuration
-#   url = ('postgresql://aimanaaw:password@localhost/docker_testdb')
+class DevelopmentConfig:
+  # Development Configuration
+  url = ('postgresql://postgres:word@localhost/testdb1')
 
-#   SQLALCHEMY_DATABASE_URI = url
-
-
-# class DockerDevConfig:
-#   # Docker Development Configuration
-#   url = ('postgresql://aimanaaw:password@localhost/docker_testdb')
-
-#   SQLALCHEMY_DATABASE_URI = url
+  SQLALCHEMY_DATABASE_URI = url
 
 
-# config = {"dev": DevelopmentConfig, "docker": DockerDevConfig}
+class DockerDevConfig:
+  # Docker Development Configuration
+  url = ('postgresql://postgres:word@localhost/testdb1')
+
+  SQLALCHEMY_DATABASE_URI = url
+
+
+config = {"dev": DevelopmentConfig, "docker": DockerDevConfig}

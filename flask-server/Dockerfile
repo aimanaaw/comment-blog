@@ -1,4 +1,4 @@
-from python:3.7
+from python:3.6
 
 RUN apt-get update
 
@@ -8,11 +8,12 @@ WORKDIR /app
 
 COPY . /app
 
-# RUN pip3 --no-cache-dir install -r requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
+
+ENV FLASK_ENV="docker"
 
 EXPOSE 5000
 
 ENTRYPOINT [ "python" ]
-CMD [ "run.py" ]
+CMD ["run.py" ]
 
