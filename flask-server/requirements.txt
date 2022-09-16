@@ -16,7 +16,7 @@ lazy-object-proxy==1.4.2
 libarchive-c==2.8
 
 
-Mako==1.1.2
+Mako==1.2.2
 MarkupSafe==1.1.1
 psycopg2==2.8.4
 pycparser==2.19
